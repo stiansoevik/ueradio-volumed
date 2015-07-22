@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# volumed enables remote control of volume on Squeezebox/Logitech UE Radio.
+# Recognized commands are "mute", "unmute" and "vol <x>" where x is between 0 and 127.
+# The connection must be closed after sending a command.
+# 
+# To automatically load at startup:
+# 1. Make the script executable (chmod +x volumed.sh)
+# 2. Add it to /etc/init.d/rcS.local
+
+
 LISTEN_PORT=1337
 MUTE_CMD="amixer sset PCM 0"
 UNMUTE_CMD="amixer sset PCM 127"
