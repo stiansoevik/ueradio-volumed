@@ -2,7 +2,7 @@
 
 LISTEN_PORT=1337
 MUTE_CMD="amixer sset PCM 0"
-UNMUTE_CMD="amixer sset PCM 255"
+UNMUTE_CMD="amixer sset PCM 127"
 VOLUME_CMD="amixer sset PCM "
 
 # Initially, unmute
