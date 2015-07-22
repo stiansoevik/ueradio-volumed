@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # volumed enables remote control of volume on Squeezebox/Logitech UE Radio.
 # Recognized commands are "mute", "unmute" and "vol <x>" where x is between 0 and 127.
