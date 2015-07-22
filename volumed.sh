@@ -10,14 +10,16 @@ $UNMUTE_CMD
 
 while true; do
 
-	received_cmd=`nc -l -p $LISTEN_PORT`
+	received_str=`nc -l -p $LISTEN_PORT`
+	cmd=`echo $received_str | awk '{print $1}'`
+	param=`echo $received_str | awk '{print $2}'`
+
+	echo "Received command: $received_str"
 	
-	echo "Received command: $received_cmd"
-	
-	if [ "$received_cmd" == "mute" ]; then
+	if [ "$cmd" == "mute" ]; then
 		echo "Muting"
 		$MUTE_CMD > /dev/null
-	elif [ "$received_cmd" == "unmute" ]; then
+	elif [ "$cmd" == "unmute" ]; then
 		echo "Unmuting"
 		$UNMUTE_CMD > /dev/null
 	else
