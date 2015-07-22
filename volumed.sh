@@ -22,6 +22,9 @@ while true; do
 	elif [ "$cmd" == "unmute" ]; then
 		echo "Unmuting"
 		$UNMUTE_CMD > /dev/null
+	elif [ "$cmd" == "vol" ]; then
+		echo "Setting volume to $param"
+		$VOLUME_CMD $param > /dev/null
 	else
 		echo "Unknown"
 	fi
