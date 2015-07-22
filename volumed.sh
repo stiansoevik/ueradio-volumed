@@ -8,7 +8,7 @@ VOLUME_CMD="amixer sset PCM "
 # Initially, unmute
 $UNMUTE_CMD
 
-while /bin/true; do
+while true; do
 
 	received_cmd=`nc -l -p $LISTEN_PORT`
 	
