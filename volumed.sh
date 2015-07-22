@@ -15,7 +15,7 @@ UNMUTE_CMD="amixer sset PCM 127"
 VOLUME_CMD="amixer sset PCM "
 
 # Initially, unmute
-$UNMUTE_CMD
+$UNMUTE_CMD > /dev/null
 
 while true; do
 
