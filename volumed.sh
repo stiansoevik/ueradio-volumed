@@ -7,6 +7,11 @@
 # To automatically load at startup:
 # 1. Make the script executable (chmod +x volumed.sh)
 # 2. Add it to /etc/init.d/rcS.local
+# 
+# To control from Fibaro HC2:
+# 1. Add virtual device, configure IP and port
+# 2. Add "mute" and "unmute" commands in buttons, remember newline
+# 3. Add slider with "vol _sliderValue_" command
 
 
 LISTEN_PORT=1337
