@@ -32,8 +32,9 @@ while true; do
 		echo "Unmuting"
 		$UNMUTE_CMD > /dev/null
 	elif [ "$cmd" == "vol" ]; then
-		echo "Setting volume to $param"
-		$VOLUME_CMD $param > /dev/null
+		mixer_val=$((64+($param*127/(100*2)))) # $param: 0-100 (Fibaro slider range), $mixer_val: 64-127 (very low-full volume)
+		echo "Setting volume to $mixer_val"
+		$VOLUME_CMD $mixer_val > /dev/null
 	else
 		echo "Unknown"
 	fi
